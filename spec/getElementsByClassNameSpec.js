@@ -19,7 +19,7 @@ describe('getElementsByClassName', function() {
       var result = getElementsByClassName('targetClassName');
       var expectedNodeList = document.getElementsByClassName('targetClassName');
       var expectedArray = Array.prototype.slice.apply(expectedNodeList);
-      var equality = _.isEqual(result, expectedArray); // why can't we use `===` here?
+      var equality = _.isEqual(result, expectedArray); // Q: why can't we use `===` here? A: because that is not how you test equality of arrays, you need to test the equivalence of each individual element
       expect(equality).to.equal(true);
 
       $rootElement.remove();
