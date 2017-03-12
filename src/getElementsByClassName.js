@@ -22,11 +22,11 @@ var getElementsByClassName = function(className) {
   var results = [];
   function getClass(element) {
     var collection = element.childNodes;
-    _.each(collection, function(node) {
-      if (node.classList && node.classList.contains(className)) {
-        results.push(node);
+    _.each(collection, function(element) {
+      if (element.classList && element.classList.contains(className)) {
+        results.push(element);
       }
-      getClass(node);
+      getClass(element);
     })
   }
   getClass(document);
